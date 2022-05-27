@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p>Are you sure to delete {{obj}}</p>
+        <!-- request 是自动传过来的，其中包含了上个访问的页面地址 -->
+        <a href="{{request.META.HTTP_REFERER}}">GO BACK</a> 
+        <input type="submit" value="Confirm" />
+    </form>
+{% endblock %}
